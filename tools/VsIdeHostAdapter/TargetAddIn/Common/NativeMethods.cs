@@ -70,7 +70,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
         /// <param name="lppe"></param>
         /// <returns>
         /// TRUE if the first entry of the process list has been copied to the buffer or FALSE otherwise. 
-        /// The ERROR_NO_MORE_FILES error value is returned by the GetLastError function if no processes exist or 
+        /// The ERROR_NO_MORE_FILES error value is returned by the GetLastError function if no process exist or 
         /// the snapshot does not contain process information.
         /// </returns>
         [SuppressMessage("Microsoft.Usage", "CA2205:UseManagedEquivalentsOfWin32Api")]
