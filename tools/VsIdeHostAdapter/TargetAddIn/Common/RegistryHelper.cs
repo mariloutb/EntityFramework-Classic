@@ -13,7 +13,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
     internal static class RegistryHelper<T>
     {
         /// <summary>
-        /// Get value of the specified key in registry, returning defaultValue if it doesn't exist or cannot be read
+        /// Get value of the specified key in registry, returning defaultValue if it doesn't exist or it cannot be read.
         /// </summary>
         /// <param name="hive">Registry hive, like: Registry.LocalMachine.</param>
         /// <param name="subkeyName">The name of the subkey under hive specified by the hive parameter.</param>
@@ -31,8 +31,8 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
 
         /// <summary>
         /// Safely attempt to read the value of the specified key in registry.
-        /// If the key does not exist or not enough security permissions returns false
-        /// 'ignoring exception' means it should not throw except really bad exceptions like outofmery, clrexecution, etc.
+        /// If the key does not exist or not enough security permissions it returns false.
+        /// 'ignoring exception' means it should not throw except in really bad exceptions like outofmery, clrexecution, etc.
         /// </summary>
         /// <param name="hive">Registry hive, like: Registry.LocalMachine.</param>
         /// <param name="subkeyName">The name of the subkey under hive specified by the hive parameter.</param>
