@@ -19,12 +19,12 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
         #region Parent Process Id
         /// <summary>
         /// Returns PID of the parent process.
-        /// The information may be unreliable: the process may already exited, etc.
+        /// The information may be unreliable: the process may already have exited, etc.
         /// </summary>
         [SuppressMessage("Microsoft.Interoperability", "CA1404:CallGetLastErrorImmediatelyAfterPInvoke")]
         public static int GetParentProcessId(int processId)
         {
-            // This may be inconsistent with snapshot but when the call returns it it not guaranteed to be consistent anyway.
+            // This may be inconsistent with snapshot but when the call returns it is not guaranteed to be consistent anyway.
             EnsureProcessExists(processId);
 
             IntPtr snapshot = IntPtr.Zero;
@@ -73,7 +73,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
             IntPtr process = IntPtr.Zero;
             try
             {
-                // It process itself does not exist, we throw.
+                // The process itself does not exist, we throw.
                 process = NativeMethods.OpenProcess(NativeMethods.PROCESS_QUERY_INFORMATION, false, (uint)processId);
                 if (process == IntPtr.Zero)
                 {
