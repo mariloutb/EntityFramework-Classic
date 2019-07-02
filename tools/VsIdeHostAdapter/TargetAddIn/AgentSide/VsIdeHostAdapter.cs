@@ -34,7 +34,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
     /// <summary>
     /// Vs Ide Host Adapter: Agent side.
     /// This wraps ITestAdapter and looks like ITestAdapter for the Agent.
-    /// Internally it delegates to original test adapter hosted by Visual Studio IDE.
+    /// Internally, it delegates to original test adapter hosted by Visual Studio IDE.
     /// 
     /// Tweaks:
     /// Registry: HKCU\SOFTWARE\Microsoft\VisualStudio\VersionMajor.VersionMinor\EnterpriseTools\QualityTools\HostAdapters\VS IDE\
@@ -158,7 +158,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
         /// <param name="testContext">The Test conext for this test invocation</param>
         void ILoadTestAdapter.LoadRun(ITestElement testElement, ITestContext testContext)
         {
-            // We want to be able to run under a load test, but at least for now we don't support actually producing load for
+            // We want to be able to run under a load test, but at least for now we don't support producing load for
             // more than one user (one test at a time). So, we enforce that with a lock. The load test should still be
             // configured to use only one user in the scenario in which this test is included.
             lock (m_loadRunLock)
@@ -239,7 +239,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
         }
 
         /// <summary>
-        /// IBaseAdapter method: called when the user pauses the test run.
+        /// IBaseAdapter method: called when the user pause the test run.
         /// </summary>
         void IBaseAdapter.PauseTestRun()
         {
@@ -493,7 +493,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
             if (m_runConfig.IsExecutedUnderDebugger)
             {
                 // First check if there is Host Data in Run Config.
-                // There is not host data when using HostType attribute (not using Run Config).
+                // There is no host data when using HostType attribute (not using Run Config).
                 string sessionId = null;
                 VsIdeHostRunConfigData hostData = m_runConfig.HostData[Name] as VsIdeHostRunConfigData;
                 if (hostData != null)
@@ -566,7 +566,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
                     }
                 }
 
-                // m_runConfig can be null if cleanup is called too early, i.e. before we comleted init.
+                // m_runConfig can be null if cleanup is called too early, i.e. before we completed init.
                 if (m_runConfig != null && m_runConfig.IsExecutedUnderDebugger)
                 {
                     // Detach debugger for VS we are going to shut down.
@@ -614,7 +614,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
 
         private void CleanupHostSession()
         {
-            // m_runConfig can be null if cleanup is called too early, i.e. before we comleted init.
+            // m_runConfig can be null if cleanup is called too early, i.e. before we completed init.
             if (m_runConfig != null && m_runConfig.IsExecutedUnderDebugger)
             {
                 Debug.Assert(m_hostSession != null);
@@ -651,13 +651,13 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
             string                              clientChannelName   = channelPrefix + "_ClientChannel";
 
             // Server channel is required for callbacks from client side.
-            // Actually it is not required when running from vstesthost as vstesthost already sets up the channels
+            // Actually, it is not required when running from vstesthost, it already sets up the channels
             // but since we have /noisolation (~ no vstesthost) mode we need to create this channel. 
-            // RunConfig.IsExecutedOutOfProc exists but it's internal so we cannot say if we are mstest-inproc or not.
+            // RunConfig.IsExecutedOutOfProc exist but it's internal so we cannot say if we are mstest-inproc or not.
             serverProvider.TypeFilterLevel = TypeFilterLevel.Full;  // Enable remoting objects as arguments.
 
             // portName:        Must be different from Clients Port.
-            // authorizedGroup: Default IpcChannel security is allow for all users who can authorize this machine.
+            // authorizedGroup: Default IpcChannel security is allowed for all users who can authorize this machine.
             properties["name"]              = serverChannelName;
             properties["portName"]          = serverChannelName;           
             properties["authorizedGroup"]   = WindowsIdentity.GetCurrent().Name;
@@ -859,7 +859,7 @@ namespace Microsoft.VisualStudio.TestTools.HostAdapters.VsIde
         }
 
         /// <summary>
-        /// Invokes specified invoker inside a loop with try-catch/everything and retries until reaches timeout or until each of the following is true:
+        /// Invokes specified invoker inside a loop with try-catch/everything and retries until it reaches timeout or until each of the following is true:
         /// - The invoker does not throw exception.
         /// - If the additional condition delegate is specified, it must return true.
         /// </summary>
