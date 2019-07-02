@@ -36,7 +36,7 @@
       <UIText Id="MenuAbsent"><![CDATA[Entire feature will be unavailable]]></UIText>
       <UIText Id="SelCDAdvertise"><![CDATA[This feature will change from run from CD state to set to be installed when required]]></UIText>
       <UIText Id="MenuAllNetwork"><![CDATA[Entire feature will be installed to run from network]]></UIText>
-      <UIText Id="SelLocalNetwork"><![CDATA[This feature will be removed from your local hard drive, but will be still available to run from the network]]></UIText>
+      <UIText Id="SelLocalNetwork"><![CDATA[This feature will be removed from your local hard drive, but will still be available to run from the network]]></UIText>
       <UIText Id="SelAdvertiseNetwork"><![CDATA[This feature will be available to run from the network]]></UIText>
       <UIText Id="MenuAllLocal"><![CDATA[Entire feature will be installed on local hard drive]]></UIText>
       <UIText Id="SelAdvertiseLocal"><![CDATA[This feature will be installed on your local hard drive]]></UIText>
@@ -58,7 +58,7 @@
       <UIText Id="SelCDCD"><![CDATA[This feature will remain to be run from CD]]></UIText>
       <UIText Id="NewFolder"><![CDATA[Folder|New Folder]]></UIText>
       <UIText Id="MenuNetwork"><![CDATA[Will be installed to run from network]]></UIText>
-      <UIText Id="SelLocalCD"><![CDATA[This feature will be removed from your local hard drive, but will be still available to run from CD]]></UIText>
+      <UIText Id="SelLocalCD"><![CDATA[This feature will be removed from your local hard drive, but will still be available to run from CD]]></UIText>
       <UIText Id="SelLocalAbsent"><![CDATA[This feature will be completely removed]]></UIText>
       <UIText Id="SelCostPending"><![CDATA[Compiling cost for this feature...]]></UIText>
       <UIText Id="SelLocalLocal"><![CDATA[This feature will remain on you local hard drive]]></UIText>
@@ -913,7 +913,7 @@ Click "Next" to start the installation.]]></Text>
           <Condition Action="hide"><![CDATA[REMOVE<>""]]></Condition>
         </Control>
         <Control Id="RemoveBodyText" Type="Text" X="6" Y="9" Width="345" Height="36">
-          <Text><![CDATA[{\VSI_MS_Sans_Serif13.0_0_0}The following applications are using files which the installer must remove. You can either close the applications and click "Try Again", or click "Continue" so that the installer continues the installation, and replaces these files when your system restarts.]]></Text>
+          <Text><![CDATA[{\VSI_MS_Sans_Serif13.0_0_0}The following applications are using files which the installer must remove. You can either close the applications and click "Try Again", or click "Continue" so that the installer continues the installation, and replace these files when your system restarts.]]></Text>
           <Condition Action="show"><![CDATA[REMOVE<>""]]></Condition>
           <Condition Action="hide"><![CDATA[REMOVE=""]]></Condition>
         </Control>
