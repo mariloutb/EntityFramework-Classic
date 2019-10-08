@@ -12,7 +12,7 @@ context.BulkDelete(customers);
 // Easy to customize
 context.BulkDelete(customers, options => options.ColumnPrimaryKeyExpression = customer => customer.Code);
 ```
-[Try it](https://dotnetfiddle.net/vnq5Dw)
+Try it: [NET Framework](https://dotnetfiddle.net/vnq5Dw) | [NET Core](https://dotnetfiddle.net/UP8x9D)
 
 ## Performance Comparison
 
@@ -21,7 +21,7 @@ context.BulkDelete(customers, options => options.ColumnPrimaryKeyExpression = cu
 | SaveChanges     | 1,200 ms       | 2,400 ms       | 6,000 ms       |
 | BulkDelete      | 50 ms          | 55 ms          | 75 ms         |
 
-[Try it](https://dotnetfiddle.net/BnBmqF)
+Try it: [NET Framework](https://dotnetfiddle.net/BnBmqF) | [NET Core](https://dotnetfiddle.net/cKxsEq)
 
 > HINT: Performance may differ from a database to another. A lot of factors might affect the benchmark time such as index, column type, latency, throttling, etc.
 
@@ -40,7 +40,21 @@ You need to delete a list of `Customer` but you dont have the IDs, you only have
 ```csharp
 context.BulkDelete(customers, options => options.ColumnPrimaryKeyExpression = customer => customer.Code);
 ```
-[Try it](https://dotnetfiddle.net/cGvtjF)
+Try it: [NET Framework](https://dotnetfiddle.net/cGvtjF) | [NET Core](https://dotnetfiddle.net/3uvfUv)
+
+## Documentation
+
+### BulkDelete
+
+###### Methods
+
+| Name | Description | Example |
+| :--- | :---------- | :------ |
+| `BulkDelete<T>(items)` | Bulk delete entities in your database. | [NET Framework](https://dotnetfiddle.net/3j4XQs) / [NET Core](https://dotnetfiddle.net/lk9xv9)|
+| `BulkDelete<T>(items, options)` | Bulk delete entities in your database.  | [NET Framework](https://dotnetfiddle.net/zZH1fj) / [NET Core](https://dotnetfiddle.net/JVOA2l) |
+| `BulkDeleteAsync<T>(items)` | Bulk delete entities asynchronously in your database. | [NET Framework](https://dotnetfiddle.net/ifGB5A) / [NET Core](https://dotnetfiddle.net/CjWATE) |
+| `BulkDeleteAsync<T>(items, cancellationToken)` | Bulk delete entities asynchronously in your database. | [NET Framework](https://dotnetfiddle.net/dvLpqE) / [NET Core](https://dotnetfiddle.net/cJwS2R) |
+| `BulkDeleteAsync<T>(items, options, cancellationToken)` | Bulk delete entities asynchronously in your database. | [NET Framework](https://dotnetfiddle.net/iUQ6Pi) / [NET Core](https://dotnetfiddle.net/33mbtS) |
 
 ## Learn more
 

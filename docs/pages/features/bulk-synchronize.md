@@ -17,7 +17,21 @@ ctx.BulkSynchronize(list);
 context.BulkSynchronize(customers, options => options.ColumnPrimaryKeyExpression = customer => customer.Code);
 ```
 
-[Try it](https://dotnetfiddle.net/4KVPJn)
+Try it: [NET Framework](https://dotnetfiddle.net/4KVPJn) | [NET Core](https://dotnetfiddle.net/PMxuNO)
+
+## Documentation
+
+### BulkSynchronize
+
+###### Methods
+
+| Name | Description | Example |
+| :--- | :---------- | :------ |
+| `BulkSynchronize<T>(items)` | Bulk synchronize entities in your database. | [NET Framework](https://dotnetfiddle.net/edgXau) | [NET Core](https://dotnetfiddle.net/I1uQOq) |
+| `BulkSynchronize<T>(items, options)` | Bulk synchronize entities in your database.  | [NET Framework](https://dotnetfiddle.net/ERqbU6) | [NET Core](https://dotnetfiddle.net/NMwuRW)|
+| `BulkSynchronizeAsync<T>(items)` | Bulk synchronize entities asynchronously in your database. | [NET Framework](https://dotnetfiddle.net/NgkYF0) | [NET Core](https://dotnetfiddle.net/upgLxQ) |
+| `BulkSynchronizeAsync<T>(items, cancellationToken)` | Bulk synchronize entities asynchronously in your database. | [NET Framework](https://dotnetfiddle.net/tTyCiK) | [NET Core](https://dotnetfiddle.net/MnaGIn) |
+| `BulkSynchronizeAsync<T>(items, options, cancellationToken)` | Bulk synchronize entities asynchronously in your database. | [NET Framework](https://dotnetfiddle.net/nDbfGU) | [NET Core](https://dotnetfiddle.net/Vg468C) |
 
 ## Learn more
 
