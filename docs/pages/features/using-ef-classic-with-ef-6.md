@@ -33,7 +33,7 @@ using EFClassic::System.Data.Entity;
 ```
 
 ## Config Section
-We recommend to use the `entityFrameworkClassic` section name in your config file.
+We recommend using the `entityFrameworkClassic` section name in your config file.
 
 ```csharp
 <?xml version="1.0" encoding="utf-8"?>
